@@ -13,13 +13,14 @@ def start_game(message):
     my_number = " "
     for pos in range(4):
         if pos:
-            digit = random.choise(digits)
+            digit = random.choice(digits)
         else:
-            digit = random.choise(digits[1:])
+            digit = random.choice(digits[1:])
         
         my_number += digit
         digits.remove(digit)
-    bot.reply_to(message, my_number)
+    bot.reply_to(message, 
+        f"Я загадал 4-значное число. Попробуй отгадать, {message.from_user.first_name}!")
 
 
 if __name__ == "__main__":
