@@ -1,4 +1,3 @@
-from selectors import EpollSelector
 import telebot 
 import random
 from config import bot_token
@@ -22,7 +21,7 @@ def start_game(message):
         
         my_number += digit
         digits.remove(digit)
-    print(my_number)
+    print(message.from_user.first_name,my_number)
     active_game = True
     bot.reply_to(message, "Это игра быки и коровы\n"
         f"Я загадал 4-значное число. Попробуй отгадать, {message.from_user.first_name}!")
